@@ -1,0 +1,10 @@
+하이퍼 텍스트 = 링크
+<a> = 앵커태그, 링크태그
+<a href=https://www.naver.com/">네이버</a> 링크 만들기
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a 기타속성을 배우는 사이트 한글로 변경 가능
+html5 레이블 = html5가 나올때 같이 출현한 속성
+안씀 html5 = html5가 나옴으로써 안쓰게된 레이블 
+<target> 타겟 속성은 링크된 리소스를 어디에 표시할지 나타냄
+_self = 내가 보고있는 창에 링크가 뜸 
+_blank = 새로운 창에 링크가 뜸
+내부 링크 = 책갈피 # id 원하는 곳으로 이동가능
