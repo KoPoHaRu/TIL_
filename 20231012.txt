@@ -1,0 +1,13 @@
+문서 구조 관련 선택자
+부모, 자식, 조상, 자손, 형제 요소
+
+자손 선택자
+div span { color: red; }
+자손 선택자는 공백으로 구분
+
+자식 선택자
+div > span { color: red; } 
+꺽새로 구분
+
+인접 형제 선택자
+div + span { color: red; }
