@@ -1,0 +1,140 @@
+가상 선택자
+지금 문서내의 존재하지 않는 요소에 스타일을 부여하거나 
+특정 요소의 상태를 미리 추정해서 가상의 클래스로 스타일을 적용 시킬수 있음
+
+가상 클래스 
+미리 정의해놓은 상황에 적용이 되도록 약속되어있는 보이지 않는 클래스
+first-child : 첫 번째 자식 요소 선택
+last-child : 마지막 자식 요소 선택
+li:first-child { color: red; }
+li:last-child { color: blue; }
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta char="utf-8">
+	<title>가상 클래스</title>
+	<style media="screen">
+	li:first-child { color: red; }
+	li:last-child { color: blue; }	
+	
+	</style>
+</head>
+<body>
+	<ul>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JS<li>
+	</ul>
+</body>
+</html>
+
+링크 관련된 가상 클래스
+:link : 하이퍼링크이면서 아직 방문하지 않은 앵커
+:visited : 이미 방문한 하이퍼링크를 의미
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meat char="uft-8">
+	<title>CSS</title>
+	<style media="screen">
+		a : link { color: blue; }
+		a : visted { color: gray; }
+	
+	</style>
+</head>
+<body>
+	<a href="http://naver.com/">네이버</a>
+	<a href="http://google.com/">구글</a>
+	<a href="http://daum.net/">다음</a>
+</body>
+</html>
+
+사용자 동작 관련 가상 클래스
+:focus:현재 입력 포커스를 갖고 있는 요소에 적용
+:hover:마우스 포인터가 위치해 있는 요소에 적용
+:active:사용자 입력에 의해 활성화된 요소에 적용
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meat char="uft-8">
+	<title>CSS</title>
+	<style media="screen">	
+		a:focus { background-color: yellow; } 
+		a:hover { font-weight: bold; } 
+		a:active { color: red; } 
+	</style>
+</head>
+<body>
+	<a href="http://naver.com/">네이버</a>
+	<a href="http://google.com/">구글</a>
+	<a href="http://daum.net/">다음</a>
+</body>
+</html>
+
+가상 요소
+미리 정의해놓은 위치에 삽입이 되도록 약속되어있는 보이지 않는 요소
+:before:r가장 앞에 요소를 삽입
+:after:가장 뒤에 요소를 삽입
+:first-line:요소의 첫 번째 줄에 있는 텍스트
+:first-letter:블록 레벨 요소의 첫 번째 문자
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>CSS</title>
+	<style media="screen">
+	p:first-letter {	
+		font-size:3em;
+		}
+
+	
+	</style>
+</head>
+<body>
+<p>막사로 복귀하던 중에 최일구를 보고 일이등병때 정다정 위치에 있었던 선임 신대호 병장 닮지 않았냐며 김태희와 노가리를 까며 최일구를 장난 삼아 갈구다가 정도가 심해지자 김태희에게 적당히 하라며 제지당한다. 그 후 흡연장에서도 김태희와 노가리를 까다가 정다정과 김태희가 돌아갈 때 같이 가면서 정다정의 부조리에 당할 뻔한 최일구의 활동복 주머니에 담배꽁초를 짬처리하고 어깨를 두드리며 지나간다. 이미 전역한 병장들의 이야기를 꿰고 있는 등 발이 넓은 모습을 보여준다.</p>
+</body>
+</html>
+
+구체성(명시도)
+구체성은 선택자를 얼마나 명시적으로 선언했느냐를 수치화 한 것
+구체성의 값이 높을수록 우선되어 적용됨
+
+구체성의 값은 0,0,0,0으로 4개의 값으로 이루어져 있음
+0,1,0,0:선택자에 있는 모든 id 속성값
+0,0,1,0:선택자에 있는 모든 class 속성값, 기타 속성, 가상 클래스
+0,0,0,1:선택자에 있는 모든 요소, 가상 요소
+전체 선택자는 0,0,0,0을 갖는다
+
+h1 {...} : 0,0,0,1
+body h1 {...} : 0,0,0,2
+grape {...} : 0,0,1,0
+bright {...} : 0,0,1,0
+p.bright em.dark {...} : 0,0,2,2
+#page {...} : 0,1,0,0
+div#page {...} : 0,1,0,1
+
+인라인 스타일
+1,0,0,0 제일 높은 구체성을 갖고있음
+
+!IMPORTANT
+속성값 뒤에 한칸 공백을 주고 느낌표와 사용
+모든 구체성을 무시하고 우선권을 갖게끔 되있음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
